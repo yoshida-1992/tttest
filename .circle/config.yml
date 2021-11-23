@@ -1,0 +1,8 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cimg/node:17.1.0
+    steps:
+      - checkout
+      - run: node --version

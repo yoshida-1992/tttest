@@ -11,7 +11,7 @@ workflows:
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           #context: myContext
-          #create-repo: true
+          #create-repo: true                # trueの場合は新規でECRレポジトリを作成するので、repoパラメータには現在ECRにないリポジトリ名を指定する。すでにあり作成いらないなら、ここはfalseにする
           dockerfile: myDockerfile
           no-output-timeout: 20m
           #path: pathToMyDockerfile

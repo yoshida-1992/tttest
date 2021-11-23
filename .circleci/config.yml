@@ -15,7 +15,7 @@ workflows:
           dockerfile: myDockerfile
           no-output-timeout: 20m
           #path: pathToMyDockerfile
-          path: pathToMyDockerfile
+          path: .
           profile-name: myProfileName
           region: AWS_DEFAULT_REGION
           repo: AWS_RESOURCE_NAME_PREFIX

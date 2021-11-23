@@ -20,6 +20,6 @@ workflows:
           region: AWS_DEFAULT_REGION
           repo: AWS_RESOURCE_NAME_PREFIX
           skip-when-tags-exist: false
-          tag: 'latest,myECRRepoTag'
-    
+          #tag: 'latest,myECRRepoTag'        # 小文字でないとダメ。英語入れるなら
+          tag: '1234567890' 
 

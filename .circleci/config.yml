@@ -5,9 +5,9 @@ workflows:
   build_and_push_image:
     jobs:
       - aws-ecr/build-and-push-image:
-          account-url: "${AWS_ECR_ACCOUNT_URL}"
-          aws-access-key-id: "${AWS_ACCESS_KEY_ID}"
-          aws-secret-access-key: "${AWS_SECRET_ACCESS_KEY}"
+          account-url: AWS_ECR_ACCOUNT_URL
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           context: myContext
           create-repo: true
           dockerfile: myDockerfile
@@ -15,8 +15,8 @@ workflows:
           #path: pathToMyDockerfile
           path: pathToMyDockerfile
           profile-name: myProfileName
-          region: "${AWS_DEFAULT_REGION}"
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          region: AWS_DEFAULT_REGION
+          repo: AWS_RESOURCE_NAME_PREFIX
           skip-when-tags-exist: false
           tag: 'latest,myECRRepoTag'
     

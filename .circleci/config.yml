@@ -1,13 +1,22 @@
-version: 2.1
-
+version: '2.1'
 orbs:
   aws-ecr: circleci/aws-ecr@7.3.0
-  #aws-ecs: circleci/aws-ecs@0x.y.z  ecsにもアップする場合の処理
-
 workflows:
-  build-and-deploy:
+  build_and_push_image:
     jobs:
       - aws-ecr/build-and-push-image:
+          account-url: "${AWS_ECR_ACCOUNT_URL}"
+          aws-access-key-id: "${AWS_ACCESS_KEY_ID}"
+          aws-secret-access-key: "${AWS_SECRET_ACCESS_KEY}"
+          context: myContext
+          create-repo: true
+          dockerfile: myDockerfile
+          no-output-timeout: 20m
+          #path: pathToMyDockerfile
+          path: pathToMyDockerfile
+          profile-name: myProfileName
+          region: "${AWS_DEFAULT_REGION}"
           repo: "${AWS_RESOURCE_NAME_PREFIX}"
-          tag: "${CIRCLE_SHA1}"
+          skip-when-tags-exist: false
+          tag: 'latest,myECRRepoTag'
     

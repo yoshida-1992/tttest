@@ -7,12 +7,9 @@ workflows:
   build_and_push_image:
     jobs:
       - aws-ecr/build-and-push-image:
-          #account-url: AWS_ECR_ACCOUNT_URL             # 自分で設定した環境変数はその変数名で指定すればOK
-          account-url: "${AWS_ECR_ACCOUNT_URL}"
-          #aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-access-key-id: "${AWS_ACCESS_KEY_ID}"
-          #aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          aws-secret-access-key: "${AWS_SECRET_ACCESS_KEY}"
+          account-url: AWS_ECR_ACCOUNT_URL             # 自分で設定した環境変数はその変数名で指定すればOK
+          aws-access-key-id: AWS_ACCESS_KEY_ID
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           #context: myContext
           #create-repo: true                # trueの場合は新規でECRレポジトリを作成するので、repoパラメータには現在ECRにないリポジトリ名を指定する。すでにあり作成いらないなら、ここはfalseにする
           #dockerfile: myDockerfile           # どこかにdockerfileを置くわけではないので、コメントアウト

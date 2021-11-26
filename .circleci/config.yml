@@ -23,4 +23,3 @@ workflows:
           #tag: 'latest,myECRRepoTag'        # 小文字でないとダメ。英語入れるなら。'名前:タグ' 形式で名前とオプションのタグを指定
           tag: IMAGE_TAG                 
           #tag: "${CIRCLE_SHA1}"              # ${}は環境変数ではなく、circle ciが自動的に入れてくれるものらしい。で${CIRCLE_SHA1}はその定義された値
-

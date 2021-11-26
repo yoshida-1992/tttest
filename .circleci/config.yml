@@ -18,7 +18,8 @@ workflows:
           path: .
           profile-name: myProfileName
           region: AWS_DEFAULT_REGION
-          repo: AWS_RESOURCE_NAME_PREFIX
+          #repo: AWS_RESOURCE_NAME_PREFIX
+          repo: "test_execute"
           skip-when-tags-exist: false
           #tag: 'latest,myECRRepoTag'        # 小文字でないとダメ。英語入れるなら。'名前:タグ' 形式で名前とオプションのタグを指定
           tag: IMAGE_TAG                 

@@ -10,7 +10,7 @@ COPY package*.json ./
 RUN npm install
 
 # Bundle app source (server.js)
-COPY . .
+COPY ..
 
 # Listen port
 EXPOSE 8080

@@ -6,12 +6,14 @@ orbs:
 workflows:
 
   # テスト
-  build:
-    docker:
-      - image: cimg/node:17.1.0
-    steps:
-      - checkout
-      - run: node --version
+  test_build:
+    jobs:
+      build:
+        docker:
+          - image: cimg/node:17.1.0
+        steps:
+          - checkout
+          - run: node --version
 
   # AWS ECRへdockerimagepush
   build_and_push_image:

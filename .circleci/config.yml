@@ -19,8 +19,8 @@ workflows:
           path: .
           profile-name: myProfileName
           region: AWS_DEFAULT_REGION
-          #repo: "${AWS_RESOURCE_NAME_PREFIX}"
-          repo: "test_execute"              # なんかAWS_RESORCE_NAME_PREFIXという環境変数を指定してたけど値が入らずエラーになってた。そのままレポジトリ名を指定したら上手くいった
+          repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          #repo: "test_execute"              # なんかAWS_RESORCE_NAME_PREFIXという環境変数を指定してたけど値が入らずエラーになってた。そのままレポジトリ名を指定したら上手くいった
           skip-when-tags-exist: false
           #tag: 'latest,myECRRepoTag'        # 小文字でないとダメ。英語入れるなら。'名前:タグ' 形式で名前とオプションのタグを指定
           tag: "latest"                 

@@ -21,6 +21,6 @@ workflows:
           region: AWS_DEFAULT_REGION
           #repo: "${AWS_RESOURCE_NAME_PREFIX}"
           repo: "test_execute"              # なんかAWS_RESORCE_NAME_PREFIXという環境変数を指定してたけど値が入らずエラーになってた。そのままレポジトリ名を指定したら上手くいった
-          #skip-when-tags-exist: false
+          skip-when-tags-exist: false
           tag: "latest"                 
           #tag: "${CIRCLE_SHA1}"              # ${}は環境変数ではなく、circle ciが自動的に入れてくれるものらしい。で${CIRCLE_SHA1}はその定義された値

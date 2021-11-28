@@ -9,7 +9,8 @@ workflows:
   build_and_push_image:
     jobs:
       - aws-ecr/build-and-push-image:
-          account-url: AWS_ECR_ACCOUNT_URL            # 自分で設定した環境変数はその変数名で指定すればOK
+          #account-url: AWS_ECR_ACCOUNT_URL            # 自分で設定した環境変数はその変数名で指定すればOK
+          account-url: "331886949743.dkr.ecr.us-east-2.amazonaws.com/test_execute"
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           #context: myContext
@@ -19,8 +20,8 @@ workflows:
           path: .
           profile-name: myProfileName
           region: AWS_DEFAULT_REGION
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
-          #repo: "test_execute"              # なんかAWS_RESORCE_NAME_PREFIXという環境変数を指定してたけど値が入らずエラーになってた。そのままレポジトリ名を指定したら上手くいった
+          #repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          repo: "test_execute"              # なんかAWS_RESORCE_NAME_PREFIXという環境変数を指定してたけど値が入らずエラーになってた。そのままレポジトリ名を指定したら上手くいった
           skip-when-tags-exist: false
           tag: "latest"                 
           #tag: "${CIRCLE_SHA1}"              # ${}は環境変数ではなく、circle ciが自動的に入れてくれるものらしい。で${CIRCLE_SHA1}はその定義された値

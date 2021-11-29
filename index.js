@@ -17,7 +17,6 @@ const ACCESS_KEY = process.env.ACCESS_KEY
 
 exports.handler =  function(event, context, callback) {
   try {
-    console.log(2)  // 確認
     const access_key = JSON.parse(event.body).form_params['access_key']
     if (access_key !== ACCESS_KEY ) {
       const res = { statusCode: 401 }
